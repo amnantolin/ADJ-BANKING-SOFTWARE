@@ -1,0 +1,3 @@
+CardNum,AccountNum,PinNum,Balance,FName,MName,LName,Age,ContactNum,Email,Address
+1111111111111111,111111111111,111111,20000,Arryll,Natividad,Antolin,69,09646468465,arryll07@gmail.com,Bulacan
+2222222222222222,222222222222,222222,10000,Danielle,Olegario,Jawod,90,09155658698,dnojawod@mymail.mapua.edu.ph,Taguig City
