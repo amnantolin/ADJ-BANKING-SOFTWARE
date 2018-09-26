@@ -1,4 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
+from data_handler import DataHandler
 import admin_close
 import admin_open
 import admin_error
@@ -13,9 +14,7 @@ import sys
 import csv
 import os
 
-parent = os.path.dirname(__file__)
-accounts = os.path.join(parent, '../../DAL/accounts.txt')
-admin = os.path.join(parent, '../../DAL/admin.txt')
+dh = DataHandler('../../DAL/Files.db')
 
 class Login(QtWidgets.QMainWindow, admin_log.Ui_admin_log):
     def __init__(self):
@@ -24,25 +23,12 @@ class Login(QtWidgets.QMainWindow, admin_log.Ui_admin_log):
         self.sys_log.clicked.connect(self.auth)
 
     def auth(self):
-        self.user_admin = []
-        self.pass_admin = []
-        with open(admin, 'r') as csv_file:
-            csv_reader = csv.reader(csv_file, delimiter=',')
-            for row in csv_reader:
-                self.user_admin.append(row[0])
-                self.pass_admin.append(row[1])
-                self.userinp = self.sys_username.text()
-                self.passinp = self.sys_pass.text()
-                for i in range(len(self.user_admin)):
-                    if self.userinp == self.user_admin[i]:
-                        if self.passinp == self.pass_admin[i]:
-                            self.log()
-                            break
-                        else:
-                            self.error()
-                            break
-                    else:
-                        self.error()
+        user = self.sys_username.text()
+        password = self.sys_pass.text()
+        if dh.admin_log(user, password):
+            self.log()
+        else:
+            self.error()
 
     def log(self):
         self.dialog = Homepage()
@@ -101,17 +87,14 @@ class OpenA(QtWidgets.QMainWindow, admin_open.Ui_admin_open):
         age = self.sys_age.text()
         contact = self.sys_contact.text()
         email = self.sys_email.text()
-        add = self.sys_add.text()
+        address = self.sys_add.text()
         cn = self.sys_cn.text()
         an = self.sys_an.text()
         pin = self.sys_pin.text()
         bal = self.sys_bal.text()
 
-        fields = [cn, an, pin, bal, fn, mn, ln, age, contact, email, add]
+        dh.add_acc(cn, an, pin, fn, mn, ln, age, contact, email, address, bal)
 
-        with open(accounts, mode='a', newline='') as outfile:
-            writer = csv.writer(outfile, delimiter=',')
-            writer.writerow(fields)
         self.close()
         self.success()
 
@@ -134,37 +117,19 @@ class CloseA(QtWidgets.QMainWindow, admin_close.Ui_admin_close):
         self.close()
 
     def deleteaccount(self):
-        self.anum = []
-        with open(accounts, 'r') as afile:
-            reader = csv.reader(afile, delimiter=',')
-            for row in reader:
-                self.anum.append(row[1])
-                self.anum_inp = self.sys_an.text()
-                for i in range(len(self.anum)):
-                    if self.anum_inp == self.anum[i]:
-                        self.accdelete()
-                        break
-                    else:
-                        self.error()
-
-    def accdelete(self):
-        with open(accounts, 'r') as accs:
-            data = list(csv.reader(accs))
-
-        with open(accounts, 'w', newline='') as accs:
-            writer = csv.writer(accs)
-            for row in data:
-                if row[1] != self.sys_an.text():
-                    writer.writerow(row)
-        self.close()
-        self.success()
+        anum = self.sys_an.text()
+        if dh.find_acc(anum):
+            dh.delete_acc(anum)
+            self.close()
+            self.success()
+        else:
+            self.error()
 
     def error(self):
         self.dialog = Error2()
         self.dialog.show()
 
     def success(self):
-        self.dialog.close()
         self.dialog1 = Homepage()
         self.dialog1.show()
         self.dialog2 = Prompt2()
@@ -175,65 +140,39 @@ class View(QtWidgets.QMainWindow, admin_view.Ui_admin_view):
         super(View, self).__init__()
         self.setupUi(self)
         self.sys_cancel.clicked.connect(self.cancel)
-        self.sys_confirm.clicked.connect(self.viewaccount)
+        self.sys_confirm.clicked.connect(self.view_find)
 
     def cancel(self):
         self.dialog1 = Homepage()
         self.dialog1.show()
         self.close()
 
-    def viewaccount(self):
-        self.anum = []
-        self.cnum = []
-        self.fn = []
-        self.mn =[]
-        self.ln = []
-        self.add =[]
-        self.age = []
-        self.contact =[]
-        self.email = []
-        self.bal = []
-
-        with open(accounts, 'r') as afile:
-            reader = csv.reader(afile, delimiter=',')
-            for row in reader:
-                self.cnum.append(row[0])
-                self.anum.append(row[1])
-                self.fn.append(row[4])
-                self.mn.append(row[5])
-                self.ln.append(row[6])
-                self.add.append(row[10])
-                self.age.append(row[7])
-                self.contact.append(row[8])
-                self.email.append(row[9])
-                self.bal.append(row[3])
-                self.anum_inp = self.sys_an.text()
-                for i in range(len(self.anum)):
-                    if self.anum_inp == self.anum[i]:
-                        Viewout.anum = self.anum[i]
-                        Viewout.cnum = self.cnum[i]
-                        Viewout.fn = self.fn[i]
-                        Viewout.mn = self.mn[i]
-                        Viewout.ln = self.ln[i]
-                        Viewout.add = self.add[i]
-                        Viewout.age = self.age[i]
-                        Viewout.contact = self.contact[i]
-                        Viewout.email = self.email[i]
-                        Viewout.bal = self.bal[i]
-                        self.accview()
-                        break
-                    else:
-                        self.error()
-
-    def accview(self):
-        self.dialog2.close()
-        self.dialog3 = Viewout()
-        self.dialog3.show()
-        self.close()
+    def view_find(self):
+        anum = self.sys_an.text()
+        if dh.find_acc(anum):
+            Viewout.acc = str(dh.view_info(anum)[0])
+            Viewout.fn = dh.view_info(anum)[1]
+            Viewout.mn = dh.view_info(anum)[2]
+            Viewout.ln = dh.view_info(anum)[3]
+            Viewout.age = dh.view_info(anum)[4]
+            Viewout.contact = dh.view_info(anum)[5]
+            Viewout.email = dh.view_info(anum)[6]
+            Viewout.add = dh.view_info(anum)[7]
+            Viewout.bal = str(dh.view_info(anum)[8])
+            Viewout.cnum = str(dh.view_info1(anum)[0])
+            self.accview()
+        else:
+            self.error()
 
     def error(self):
         self.dialog2 = Error2()
         self.dialog2.show()
+
+    def accview(self):
+        self.dialog3 = Viewout()
+        self.dialog3.show()
+        self.close()
+
 
 class Viewout(QtWidgets.QMainWindow, admin_viewout.Ui_admin_viewout):
     def __init__(self):
@@ -252,7 +191,7 @@ class Viewout(QtWidgets.QMainWindow, admin_viewout.Ui_admin_viewout):
         self.labelf.setText(_translate("admin_viewout", self.contact))
         self.labelg.setText(_translate("admin_viewout", self.email))
         self.labelh.setText(_translate("admin_viewout", self.cnum))
-        self.labeli.setText(_translate("admin_viewout", self.anum))
+        self.labeli.setText(_translate("admin_viewout", self.acc))
         self.labelj.setText(_translate("admin_viewout", self.bal))
 
     def homepage(self):
