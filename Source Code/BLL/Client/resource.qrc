@@ -1,0 +1,13 @@
+<RCC>
+	<qresource prefix="images">
+		<file alias='gradient.png'>./gradient.png</file>
+
+		<file alias='icon.png'>./icon.png</file>
+		<file alias='logo.png'>./logo.png</file>
+		<file alias='black.png'>./black.png</file>
+		<file alias='bg1.png'>./bg1.png</file>
+		<file alias='sbg1.png'>./sbg1.png</file>
+		<file alias='sbg1err.png'>./sbg1err.png</file>
+	</qresource>
+
+</RCC>

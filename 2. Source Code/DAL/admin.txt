@@ -1,4 +1,0 @@
-admin,admin
-amnantolin,antolin
-dnojawod,jawod
-jmdreyes,reyes

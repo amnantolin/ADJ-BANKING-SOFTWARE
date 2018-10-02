@@ -1,0 +1,18 @@
+<RCC>
+
+  <qresource prefix="images">
+
+    <file alias='ad.png'>./adbg.png</file>
+
+    <file alias='adlog.png'>./adlogbg.png</file>
+
+    <file alias='aderr.png'>./adbgerror.png</file>
+
+    <file alias='icon.png'>./icon.png</file>
+
+    <file alias='logo.png'>./logo.png</file>
+    <file alias='black.png'>./black.png</file>
+
+  </qresource>
+
+</RCC>
