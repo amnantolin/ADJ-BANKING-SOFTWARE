@@ -1,0 +1,36 @@
+pyuic5 -x filename.ui -o filename.py		|
+pyrcc5 -o res1.py resource.qrc			|
+						|
+-------------------------------------------------
+
+pyuic5 -x Atm_Balance.ui -o Atm_Balance.py
+
+pyuic5 -x Atm_ChangePin.ui -o Atm_ChangePin.py
+
+pyuic5 -x Atm_ChangePin_Error.ui -o Atm_ChangePin_Error.py
+
+pyuic5 -x Atm_ChangePin_Reenter.ui -o Atm_ChangePin_Reenter.py
+
+pyuic5 -x Atm_ChangePin_Success.ui -o Atm_ChangePin_Success.py
+
+pyuic5 -x Atm_Deposit.ui -o Atm_Deposit.py
+
+pyuic5 -x Atm_Deposit_Receipt.ui -o Atm_Deposit_Receipt.py
+
+pyuic5 -x Atm_Login.ui -o Atm_Login.py
+
+pyuic5 -x Atm_Login_Error.ui -o Atm_Login_Error.py
+
+pyuic5 -x Atm_Login_Error_Max.ui -o Atm_Login_Error_Max.py
+
+pyuic5 -x Atm_NewTransaction.ui -o Atm_NewTransaction.py
+
+pyuic5 -x Atm_Transactions.ui -o Atm_Transactions.py
+
+pyuic5 -x Atm_Withdraw.ui -o Atm_Withdraw.py
+
+pyuic5 -x Atm_Withdraw_Error_Exceed.ui -o Atm_Withdraw_Error_Exceed.py
+
+pyuic5 -x Atm_Withdraw_Error_Insuff.ui -o Atm_Withdraw_Error_Insuff.py
+
+pyuic5 -x Atm_Withdraw_Receipt.ui -o Atm_Withdraw_Receipt.py

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Atm_Transactions</class>
+ <widget class="QWidget" name="Atm_Transactions">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>650</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>650</width>
+    <height>450</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>650</width>
+    <height>450</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>ATM TRANSACTIONS</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton{
+color: white;
+background: white;
+background-color: rgb(30, 0, 50);
+border: 2px solid white;
+}
+
+QPushButton:hover{
+background-color: rgb(40, 40, 40);
+color: white;
+}
+
+QPushButton:pressed
+{
+font: bold;
+}
+
+</string>
+  </property>
+  <widget class="QPushButton" name="deposit">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>100</y>
+     <width>160</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>DEPOSIT</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="withdraw">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>160</y>
+     <width>160</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>WITHDRAW</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="balance">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>220</y>
+     <width>160</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>BALANCE INQUIRY</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="changepin">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>280</y>
+     <width>160</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>CHANGE PIN</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="logout">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>380</y>
+     <width>130</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+color: black;
+background: gray;
+background-color: gray;
+border: 2px solid white;
+}
+
+QPushButton:hover{
+background-color: rgb(80, 0, 0);
+color: white;
+}</string>
+   </property>
+   <property name="text">
+    <string>LOGOUT</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>650</width>
+     <height>450</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>650</width>
+     <height>450</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>650</width>
+     <height>450</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/images/clientbg1.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>deposit</zorder>
+  <zorder>withdraw</zorder>
+  <zorder>balance</zorder>
+  <zorder>changepin</zorder>
+  <zorder>logout</zorder>
+ </widget>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
