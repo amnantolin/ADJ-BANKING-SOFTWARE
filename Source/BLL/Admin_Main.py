@@ -1,11 +1,15 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from data_handler import DataHandler
-import admin_close, admin_open, admin_hp, admin_log, admin_view, admin_viewout, SPLASH_screen
-import admin_error, admin_error2, admin_error3, admin_error4
-import admin_prompt, admin_prompt2
 import sys
 
-dh = DataHandler('../../DAL/Files.db')
+sys.path.insert(0, '../DAL')
+from data_handler import DataHandler
+
+sys.path.insert(0, '../UI')
+import admin_log, admin_close, admin_open, admin_hp, admin_view, admin_viewout, SPLASH_screen
+import admin_error, admin_error2, admin_error3, admin_error4
+import admin_prompt, admin_prompt2
+
+dh = DataHandler('../../Database/Files.db')
 
 class Splash(SPLASH_screen.cssden):
     def __init__(self):
@@ -312,4 +316,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

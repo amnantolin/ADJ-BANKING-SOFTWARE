@@ -1,11 +1,15 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from client_data_handler import DataHandler
+import sys
+
+sys.path.insert(0, '../DAL')
+from data_handler import DataHandler
+
+sys.path.insert(0, '../UI')
 import Atm_Login, Atm_Transactions, Atm_Deposit, Atm_Deposit_Receipt, Atm_Withdraw, Atm_Withdraw_Receipt, Atm_Balance, Atm_ChangePin
 import Atm_Login_Error, Atm_Login_Error_Max, Atm_NewTransaction, Atm_Withdraw_Error_Insuff, Atm_Withdraw_Error_Exceed, Atm_ChangePin_Success, SPLASH_screen
 import Atm_ChangePin_Error, Atm_ChangePin_Reenter, Atm_ChangePin_Blank
-import sys
 
-dh = DataHandler('../../DAL/Files.db')
+dh = DataHandler('../../Database/Files.db')
 
 class Splash(SPLASH_screen.cssden):
     def __init__(self):
