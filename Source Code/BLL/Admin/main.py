@@ -18,18 +18,24 @@ class Splash(SPLASH_screen.cssden):
 class Login(QtWidgets.QMainWindow, admin_log.Ui_admin_log):
     def __init__(self):
         super(Login, self).__init__()
-        self.setupUi(self)
-        self.sys_log.clicked.connect(self.auth)
-        self.sys_username.returnPressed.connect(self.auth)
-        self.sys_pass.returnPressed.connect(self.auth)
+        try:
+            self.setupUi(self)
+            self.sys_log.clicked.connect(self.auth)
+            self.sys_username.returnPressed.connect(self.auth)
+            self.sys_pass.returnPressed.connect(self.auth)
+        except Exception as e:
+            print(e)
 
     def auth(self):
         user = self.sys_username.text()
         password = self.sys_pass.text()
-        if dh.admin_log(user, password):
-            self.log()
-        else:
-            self.error()
+        try:
+            if dh.admin_log(user, password):
+                self.log()
+            else:
+                self.error()
+        except Exception as e:
+            print(e)
 
     def log(self):
         self.dialog = Homepage()
@@ -43,11 +49,14 @@ class Login(QtWidgets.QMainWindow, admin_log.Ui_admin_log):
 class Homepage(QtWidgets.QMainWindow, admin_hp.Ui_admin_hp):
     def __init__(self):
         super(Homepage, self).__init__()
-        self.setupUi(self)
-        self.sys_logout.clicked.connect(self.out)
-        self.sys_open.clicked.connect(self.op)
-        self.sys_close.clicked.connect(self.cl)
-        self.sys_info.clicked.connect(self.vi)
+        try:
+            self.setupUi(self)
+            self.sys_logout.clicked.connect(self.out)
+            self.sys_open.clicked.connect(self.op)
+            self.sys_close.clicked.connect(self.cl)
+            self.sys_info.clicked.connect(self.vi)
+        except Exception as e:
+            print(e)
 
     def out(self):
         self.dialog = Login()
@@ -72,9 +81,12 @@ class Homepage(QtWidgets.QMainWindow, admin_hp.Ui_admin_hp):
 class OpenA(QtWidgets.QMainWindow, admin_open.Ui_admin_open):
     def __init__(self):
         super(OpenA, self).__init__()
-        self.setupUi(self)
-        self.sys_cancel.clicked.connect(self.cancel)
-        self.sys_create.clicked.connect(self.createaccount)
+        try:
+            self.setupUi(self)
+            self.sys_cancel.clicked.connect(self.cancel)
+            self.sys_create.clicked.connect(self.createaccount)
+        except Exception as e:
+            print(e)
 
     def cancel(self):
         self.dialog = Homepage()
@@ -94,20 +106,23 @@ class OpenA(QtWidgets.QMainWindow, admin_open.Ui_admin_open):
         pin = self.sys_pin.text()
         bal = self.sys_bal.text()
 
-        if fn.isspace() or fn == '' or mn.isspace() or mn == '' or ln.isspace() or ln == '' or age.isspace() \
-                or age == '' or contact.isspace() or contact == '' or email.isspace() or email == '' \
-                or address.isspace() or address == '' or cn.isspace() or cn == '' or an.isspace() or an == '' \
-                or pin.isspace() or pin == '' or bal.isspace() or bal == '':
+        try:
+            if fn.isspace() or fn == '' or mn.isspace() or mn == '' or ln.isspace() or ln == '' or age.isspace() \
+                    or age == '' or contact.isspace() or contact == '' or email.isspace() or email == '' \
+                    or address.isspace() or address == '' or cn.isspace() or cn == '' or an.isspace() or an == '' \
+                    or pin.isspace() or pin == '' or bal.isspace() or bal == '':
 
-            self.error()
+                self.error()
 
-        elif dh.check_reps(an, cn):
-            self.error2()
+            elif dh.check_reps(an, cn):
+                self.error2()
 
-        else:
-            dh.add_acc(cn, an, pin, fn, mn, ln, age, contact, email, address, bal)
-            self.close()
-            self.success()
+            else:
+                dh.add_acc(cn, an, pin, fn, mn, ln, age, contact, email, address, bal)
+                self.close()
+                self.success()
+        except Exception as e:
+            print(e)
 
 
     def success(self):
@@ -127,10 +142,13 @@ class OpenA(QtWidgets.QMainWindow, admin_open.Ui_admin_open):
 class CloseA(QtWidgets.QMainWindow, admin_close.Ui_admin_close):
     def __init__(self):
         super(CloseA, self).__init__()
-        self.setupUi(self)
-        self.sys_cancel.clicked.connect(self.cancel)
-        self.sys_delete.clicked.connect(self.deleteaccount)
-        self.sys_an.returnPressed.connect(self.deleteaccount)
+        try:
+            self.setupUi(self)
+            self.sys_cancel.clicked.connect(self.cancel)
+            self.sys_delete.clicked.connect(self.deleteaccount)
+            self.sys_an.returnPressed.connect(self.deleteaccount)
+        except Exception as e:
+            print(e)
 
     def cancel(self):
         self.dialog = Homepage()
@@ -139,12 +157,15 @@ class CloseA(QtWidgets.QMainWindow, admin_close.Ui_admin_close):
 
     def deleteaccount(self):
         anum = self.sys_an.text()
-        if dh.find_acc(anum):
-            dh.delete_acc(anum)
-            self.close()
-            self.success()
-        else:
-            self.error()
+        try:
+            if dh.find_acc(anum):
+                dh.delete_acc(anum)
+                self.close()
+                self.success()
+            else:
+                self.error()
+        except Exception as e:
+            print(e)
 
     def error(self):
         self.dialog = Error2()
@@ -159,10 +180,13 @@ class CloseA(QtWidgets.QMainWindow, admin_close.Ui_admin_close):
 class View(QtWidgets.QMainWindow, admin_view.Ui_admin_view):
     def __init__(self):
         super(View, self).__init__()
-        self.setupUi(self)
-        self.sys_cancel.clicked.connect(self.cancel)
-        self.sys_confirm.clicked.connect(self.view_find)
-        self.sys_an.returnPressed.connect(self.view_find)
+        try:
+            self.setupUi(self)
+            self.sys_cancel.clicked.connect(self.cancel)
+            self.sys_confirm.clicked.connect(self.view_find)
+            self.sys_an.returnPressed.connect(self.view_find)
+        except Exception as e:
+            print(e)
 
     def cancel(self):
         self.dialog1 = Homepage()
@@ -171,20 +195,23 @@ class View(QtWidgets.QMainWindow, admin_view.Ui_admin_view):
 
     def view_find(self):
         anum = self.sys_an.text()
-        if dh.find_acc(anum):
-            Viewout.acc = str(dh.view_info(anum)[0])
-            Viewout.fn = dh.view_info(anum)[1]
-            Viewout.mn = dh.view_info(anum)[2]
-            Viewout.ln = dh.view_info(anum)[3]
-            Viewout.age = dh.view_info(anum)[4]
-            Viewout.contact = dh.view_info(anum)[5]
-            Viewout.email = dh.view_info(anum)[6]
-            Viewout.add = dh.view_info(anum)[7]
-            Viewout.bal = str(dh.view_info(anum)[8])
-            Viewout.cnum = str(dh.view_info1(anum)[0])
-            self.accview()
-        else:
-            self.error()
+        try:
+            if dh.find_acc(anum):
+                Viewout.acc = str(dh.view_info(anum)[0])
+                Viewout.fn = dh.view_info(anum)[1]
+                Viewout.mn = dh.view_info(anum)[2]
+                Viewout.ln = dh.view_info(anum)[3]
+                Viewout.age = dh.view_info(anum)[4]
+                Viewout.contact = dh.view_info(anum)[5]
+                Viewout.email = dh.view_info(anum)[6]
+                Viewout.add = dh.view_info(anum)[7]
+                Viewout.bal = str(dh.view_info(anum)[8])
+                Viewout.cnum = str(dh.view_info1(anum)[0])
+                self.accview()
+            else:
+                self.error()
+        except Exception as e:
+            print(e)
 
     def error(self):
         self.dialog2 = Error2()
@@ -199,14 +226,17 @@ class View(QtWidgets.QMainWindow, admin_view.Ui_admin_view):
 class Viewout(QtWidgets.QMainWindow, admin_viewout.Ui_admin_viewout):
     def __init__(self):
         super(Viewout, self).__init__()
-        self.setupUi(self)
-        self.sys_back.clicked.connect(self.homepage)
-        self.showdetails()
+        try:
+            self.setupUi(self)
+            self.sys_back.clicked.connect(self.homepage)
+            self.showdetails()
+        except Exception as e:
+            print(e)
 
     def showdetails(self):
         _translate = QtCore.QCoreApplication.translate
-        self.labela.setText(_translate("admin_viewout", self.fn))
-        self.labelb.setText(_translate("admin_viewout", self.mn))
+        self.label.setText(_translate("admin_viewout", self.fn))
+        self.label.setText(_translate("admin_viewout", self.mn))
         self.labelc.setText(_translate("admin_viewout", self.ln))
         self.labeld.setText(_translate("admin_viewout", self.add))
         self.labele.setText(_translate("admin_viewout", self.age))
@@ -224,38 +254,56 @@ class Viewout(QtWidgets.QMainWindow, admin_viewout.Ui_admin_viewout):
 class Error(QtWidgets.QMainWindow, admin_error.Ui_admin_error):
     def __init__(self):
         super(Error, self).__init__()
-        self.setupUi(self)
-        self.sys_ok.clicked.connect(self.close)
+        try:
+            self.setupUi(self)
+            self.sys_ok.clicked.connect(self.close)
+        except Exception as e:
+            print(e)
 
 class Error2(QtWidgets.QMainWindow, admin_error2.Ui_admin_error2):
     def __init__(self):
         super(Error2, self).__init__()
-        self.setupUi(self)
-        self.sys_ok.clicked.connect(self.close)
+        try:
+            self.setupUi(self)
+            self.sys_ok.clicked.connect(self.close)
+        except Exception as e:
+            print(e)
 
 class Error3(QtWidgets.QMainWindow, admin_error3.Ui_admin_error3):
     def __init__(self):
         super(Error3, self).__init__()
-        self.setupUi(self)
-        self.sys_ok.clicked.connect(self.close)
+        try:
+            self.setupUi(self)
+            self.sys_ok.clicked.connect(self.close)
+        except Exception as e:
+            print(e)
 
 class Error4(QtWidgets.QMainWindow, admin_error4.Ui_admin_error4):
     def __init__(self):
         super(Error4, self).__init__()
-        self.setupUi(self)
-        self.sys_ok.clicked.connect(self.close)
+        try:
+            self.setupUi(self)
+            self.sys_ok.clicked.connect(self.close)
+        except Exception as e:
+            print(e)
 
 class Prompt(QtWidgets.QMainWindow, admin_prompt.Ui_admin_prompt):
     def __init__(self):
         super(Prompt, self).__init__()
-        self.setupUi(self)
-        self.sys_ok.clicked.connect(self.close)
+        try:
+            self.setupUi(self)
+            self.sys_ok.clicked.connect(self.close)
+        except Exception as e:
+            print(e)
 
 class Prompt2(QtWidgets.QMainWindow, admin_prompt2.Ui_admin_prompt2):
     def __init__(self):
         super(Prompt2, self).__init__()
-        self.setupUi(self)
-        self.sys_ok.clicked.connect(self.close)
+        try:
+            self.setupUi(self)
+            self.sys_ok.clicked.connect(self.close)
+        except Exception as e:
+            print(e)
 
 def main():
     form = Splash()
