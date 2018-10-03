@@ -239,8 +239,8 @@ class Viewout(QtWidgets.QMainWindow, admin_viewout.Ui_admin_viewout):
 
     def showdetails(self):
         _translate = QtCore.QCoreApplication.translate
-        self.label.setText(_translate("admin_viewout", self.fn))
-        self.label.setText(_translate("admin_viewout", self.mn))
+        self.labela.setText(_translate("admin_viewout", self.fn))
+        self.labelb.setText(_translate("admin_viewout", self.mn))
         self.labelc.setText(_translate("admin_viewout", self.ln))
         self.labeld.setText(_translate("admin_viewout", self.add))
         self.labele.setText(_translate("admin_viewout", self.age))
