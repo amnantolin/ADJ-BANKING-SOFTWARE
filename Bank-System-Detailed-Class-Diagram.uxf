@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>16</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>704</x>
+      <y>1328</y>
+      <w>336</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Login_Admin
+--
+-user: string
+-password: string
+-
++authenticate()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1216</x>
+      <y>1312</y>
+      <w>336</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>Homepage
+--
+-user: string
+-password: string
+-
++Logout()
++OpenAcc()
++CloseAcc()
++ViewAcc()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1760</x>
+      <y>992</y>
+      <w>336</w>
+      <h>384</h>
+    </coordinates>
+    <panel_attributes>OpenA
+--
+-fn: string
+-mn: string
+-ln: string
+-age: string
+-contact: string
+-email: string
+-add: string
+-cn: int
+-an: int
+-pin: int
+-bal: int
+-
++createaccount()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1760</x>
+      <y>1408</y>
+      <w>336</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>CloseA
+--
+-anum: int
+-
++deleteaccount()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1760</x>
+      <y>1568</y>
+      <w>336</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>View
+--
+-anum: int
+-
++view_find()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2272</x>
+      <y>1488</y>
+      <w>336</w>
+      <h>352</h>
+    </coordinates>
+    <panel_attributes>Viewout
+--
+-fn: string
+-mn: string
+-ln: string
+-add: string
+-age: string
+-contact: string
+-email: string
+-bal: int
+-acc: int
+-cnum: int
+-
++showdetails()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1024</x>
+      <y>1392</y>
+      <w>224</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1536</x>
+      <y>1280</y>
+      <w>256</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;80.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1536</x>
+      <y>1408</y>
+      <w>256</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1536</x>
+      <y>1456</y>
+      <w>256</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;140.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2080</x>
+      <y>1600</y>
+      <w>224</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>400</y>
+      <w>336</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Login_Atm
+--
+-cnum: int
+-pnum: int
+-
++authenticate()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1232</x>
+      <y>352</y>
+      <w>336</w>
+      <h>256</h>
+    </coordinates>
+    <panel_attributes>Transactions
+--
+-cnum: int
+-pnum: int
+-
++Logout()
++Deposit()
++Withdraw()
++Balance()
++ChangePin()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1760</x>
+      <y>32</y>
+      <w>336</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>Deposit
+--
+-anum: int
+-bal: int
+-dep: int
+-newbal: int
+-
++deposit()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2224</x>
+      <y>48</y>
+      <w>336</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>Deposit_Receipt
+--
+-anum: int
+-bal: int
+-dep: int
+-
+-showreceipt()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1760</x>
+      <y>272</y>
+      <w>336</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>Withdraw
+--
+-anum:  int
+-bal: int
+-wdraw: int
+-newbal: int
+-
++withdraw()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2224</x>
+      <y>288</y>
+      <w>336</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>Withdraw_Receipt
+--
+-anum: int
+-bal: int
+-wdraw: int
+-
++showreceipt()
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1760</x>
+      <y>512</y>
+      <w>336</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Balance
+--
+-anum: int
+-bal: int
+-
++showbalance()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1760</x>
+      <y>688</y>
+      <w>336</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>ChangePin
+--
+-anum: int
+-oldpin: int
+-pin: int
+-repin: int
+-newpin: int
+-
++change()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1040</x>
+      <y>464</y>
+      <w>224</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1552</x>
+      <y>144</y>
+      <w>240</w>
+      <h>336</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;190.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1552</x>
+      <y>336</y>
+      <w>240</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;90.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1552</x>
+      <y>496</y>
+      <w>240</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;130.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1552</x>
+      <y>528</y>
+      <w>240</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;130.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2080</x>
+      <y>128</y>
+      <w>176</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2080</x>
+      <y>352</y>
+      <w>176</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+</diagram>
