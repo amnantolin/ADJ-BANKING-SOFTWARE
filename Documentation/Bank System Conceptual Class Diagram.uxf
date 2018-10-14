@@ -11,13 +11,13 @@
     </coordinates>
     <panel_attributes>Customer
 --
--First Name
--Middle Name
--Last Name
--Age
--Contact
--Email
--Address</panel_attributes>
+First Name
+Middle Name
+Last Name
+Age
+Contact
+Email
+Address</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -30,10 +30,10 @@
     </coordinates>
     <panel_attributes>Bank Account
 --
--Card Number
--Account Number
--Pin Number
--Initial Balance
+Card Number
+Account Number
+Pin Number
+Initial Balance
 </panel_attributes>
     <additional_attributes/>
   </element>

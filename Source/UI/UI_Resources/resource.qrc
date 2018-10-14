@@ -8,6 +8,12 @@
 
     <file alias='aderr.png'>./adbgerror.png</file>
 
+    <file alias='clientlog.png'>./clientbglog.png</file>
+    <file alias='clienterr.png'>./clientbgErr.png</file>
+
+
+    <file alias='client.png'>./clientbg1.png</file>
+
     <file alias='icon.png'>./icon.png</file>
 
     <file alias='logo.png'>./logo.png</file>

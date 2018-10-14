@@ -1,13 +1,24 @@
 <RCC>
-	<qresource prefix="images">
-		<file alias='gradient.png'>./gradient.png</file>
 
-		<file alias='icon.png'>./icon.png</file>
-		<file alias='logo.png'>./logo.png</file>
-		<file alias='black.png'>./black.png</file>
-		<file alias='bg1.png'>./bg1.png</file>
-		<file alias='sbg1.png'>./sbg1.png</file>
-		<file alias='sbg1err.png'>./sbg1err.png</file>
-	</qresource>
+  <qresource prefix="images">
+
+    <file alias='ad.png'>./UI_Resources/adbg.png</file>
+
+    <file alias='adlog.png'>./UI_Resources/adlogbg.png</file>
+
+    <file alias='aderr.png'>./UI_Resources/adbgerror.png</file>
+
+    <file alias='clientlog.png'>./UI_Resources/clientbglog.png</file>
+    <file alias='clienterr.png'>./UI_Resources/clientbgErr.png</file>
+
+
+    <file alias='client.png'>./UI_Resources/clientbg1.png</file>
+
+    <file alias='icon.png'>./UI_Resources/icon.png</file>
+
+    <file alias='logo.png'>./UI_Resources/logo.png</file>
+    <file alias='black.png'>./UI_Resources/black.png</file>
+
+  </qresource>
 
 </RCC>

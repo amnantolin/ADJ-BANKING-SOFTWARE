@@ -1,23 +1,10 @@
 import unittest
 import sys
-sys.path.insert(0, '../DAL')
+sys.path.insert(0, '../Source/DAL')
 from data_handler import DataHandler
 
-dh = DataHandler('../../Database/Files.db')
+dh = DataHandler('../Database/Files.db')
 class TestData_Handler(unittest.TestCase):
-
-    def test_add_acc(self):
-        print("test_add_acc")
-        self.assertFalse(dh.check_reps(999999999999, 999999999999999))
-        dh.add_acc(999999999999999, 999999999999, 9999, "Chris", "Robert", "Evans", "37", "09154848488",
-                             "crevans@gmail.com", "Boston", 10000)
-        self.assertTrue(dh.check_reps(999999999999, 999999999999999))
-
-    def test_delete_acc(self):
-        print("test_delete_acc")
-        self.assertTrue(dh.find_acc(999999999999))
-        dh.delete_acc(999999999999)
-        self.assertFalse(dh.find_acc(999999999999))
 
     def test_admin_log(self):
         print("test_admin_log")
@@ -27,13 +14,25 @@ class TestData_Handler(unittest.TestCase):
         self.assertTrue(dh.admin_log("jmdreyes", "reyes"))
         self.assertFalse(dh.admin_log("crevans", "evans"))
 
+    def test_add_acc(self):
+        print("test_add_acc")
+        self.assertFalse(dh.check_reps(999999999999, 999999999999999))
+        dh.add_acc(999999999999999, 999999999999, 999999, "Chris", "Robert", "Evans", "37", "09154848488",
+                             "crevans@gmail.com", "Boston", 10000)
+        self.assertTrue(dh.check_reps(999999999999, 999999999999999))
+
+    def test_delete_acc(self):
+        print("test_delete_acc")
+        self.assertTrue(dh.find_acc(999999999999))
+        dh.delete_acc(999999999999)
+        self.assertFalse(dh.find_acc(999999999999))
+
     def test_find_acc(self):
         print("test_find_acc")
         self.assertTrue(dh.find_acc(111111111111))
         self.assertTrue(dh.find_acc(222222222222))
         self.assertTrue(dh.find_acc(333333333333))
-        self.assertFalse(dh.find_acc(565165155545))
-
+        self.assertFalse(dh.find_acc(999999999999))
 
     def test_view_info(self):
         print("test_view_info")
@@ -47,7 +46,7 @@ class TestData_Handler(unittest.TestCase):
         self.assertEqual("arryll07@gmail.com", dh.view_info(111111111111)[6])
         self.assertEqual("Bulacan", dh.view_info(111111111111)[7])
         self.assertEqual(1000, dh.view_info(111111111111)[8])
-        self.assertIsNone(dh.view_info(651654646454))
+        self.assertIsNone(dh.view_info(999999999999))
 
     def test_view_info1(self):
         print("test_view_info1")
@@ -57,7 +56,7 @@ class TestData_Handler(unittest.TestCase):
         self.assertEqual(2222222222222222, dh.view_info1(222222222222)[0])
         self.assertIsNotNone(dh.view_info1(333333333333))
         self.assertEqual(3333333333333333, dh.view_info1(333333333333)[0])
-        self.assertIsNone(dh.view_info1(651654646454))
+        self.assertIsNone(dh.view_info1(999999999999))
 
 
     def test_client_log(self):
