@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>20</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>500</y>
+      <w>420</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>Customer
+--
+First Name
+Middle Name
+Last Name
+Age
+Contact
+Email
+Address</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1420</x>
+      <y>500</y>
+      <w>420</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>Bank Account
+--
+Card Number
+Account Number
+Pin Number
+Initial Balance
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1080</x>
+      <y>640</y>
+      <w>380</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..n</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+</diagram>
