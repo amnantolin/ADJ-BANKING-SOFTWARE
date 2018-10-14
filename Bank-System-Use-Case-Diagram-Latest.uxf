@@ -46,17 +46,6 @@
     <additional_attributes>10.0;10.0;110.0;40.0</additional_attributes>
   </element>
   <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>860</x>
-      <y>940</y>
-      <w>240</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>ATM Transaction</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
       <x>660</x>
@@ -70,8 +59,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1680</x>
-      <y>980</y>
+      <x>1300</x>
+      <y>900</y>
       <w>240</w>
       <h>80</h>
     </coordinates>
@@ -81,8 +70,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1660</x>
-      <y>1140</y>
+      <x>1280</x>
+      <y>1060</y>
       <w>240</w>
       <h>80</h>
     </coordinates>
@@ -92,8 +81,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1240</x>
-      <y>1020</y>
+      <x>860</x>
+      <y>940</y>
       <w>280</w>
       <h>80</h>
     </coordinates>
@@ -103,20 +92,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1080</x>
-      <y>960</y>
-      <w>200</w>
-      <h>140</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;
-&lt;&lt;includes&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;50.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1500</x>
-      <y>1000</y>
+      <x>1120</x>
+      <y>920</y>
       <w>240</w>
       <h>100</h>
     </coordinates>
@@ -127,8 +104,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1480</x>
-      <y>1060</y>
+      <x>1100</x>
+      <y>980</y>
       <w>220</w>
       <h>160</h>
     </coordinates>
@@ -139,8 +116,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1660</x>
-      <y>1300</y>
+      <x>1280</x>
+      <y>1220</y>
       <w>240</w>
       <h>80</h>
     </coordinates>
@@ -150,8 +127,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1440</x>
-      <y>1080</y>
+      <x>1060</x>
+      <y>1000</y>
       <w>300</w>
       <h>280</h>
     </coordinates>
@@ -162,8 +139,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1720</x>
-      <y>860</y>
+      <x>1340</x>
+      <y>780</y>
       <w>240</w>
       <h>80</h>
     </coordinates>
@@ -173,8 +150,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1480</x>
-      <y>900</y>
+      <x>1100</x>
+      <y>820</y>
       <w>280</w>
       <h>180</h>
     </coordinates>
